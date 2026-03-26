@@ -1,8 +1,8 @@
-import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import eslint from '@eslint/js'
+import { defineConfig } from 'eslint/config'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default defineConfig(
   {
@@ -47,4 +47,4 @@ export default defineConfig(
       '@typescript-eslint/no-namespace': 'off',
     },
   },
-);
+)
