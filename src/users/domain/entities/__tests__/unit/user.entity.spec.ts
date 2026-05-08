@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { UserEntity, UserProps } from '../../user.entity'
+import { UserDataBuilder } from '../../testing/factories/user-factory'
 
 describe('UserEntity Unit Tests', () => {
   let userProps: UserProps
@@ -8,11 +9,7 @@ describe('UserEntity Unit Tests', () => {
   beforeEach(() => {
     jest.clearAllMocks()
 
-    userProps = {
-      name: faker.person.fullName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-    }
+    userProps = UserDataBuilder({})
 
     sut = new UserEntity(userProps)
   })
