@@ -27,6 +27,13 @@ describe('UserEntity Unit Tests', () => {
     expect(typeof sut.name).toBe('string')
   })
 
+  it('Setter of name field should update the value correctly', () => {
+    const newName = faker.person.fullName()
+    sut.name = newName
+
+    expect(sut.name).toBe(newName)
+  })
+
   it('Getter of email field should return the correct value', () => {
     expect(sut.email).toBeDefined()
     expect(sut.email).toBe(userProps.email)
@@ -39,8 +46,29 @@ describe('UserEntity Unit Tests', () => {
     expect(typeof sut.password).toBe('string')
   })
 
+  it('Setter of password field should update the value correctly', () => {
+    const newPassword = faker.internet.password()
+    sut.password = newPassword
+
+    expect(sut.password).toBe(newPassword)
+  })
+
   it('Getter of createdAt field should return the correct value', () => {
     expect(sut.createdAt).toBeDefined()
     expect(sut.createdAt).toBeInstanceOf(Date)
+  })
+
+  it('update method should update the name property correctly', () => {
+    const newName = faker.person.fullName()
+    sut.update(newName)
+
+    expect(sut.name).toBe(newName)
+  })
+
+  it('updatePassword method should update the password property correctly', () => {
+    const newPassword = faker.internet.password()
+    sut.updatePassword(newPassword)
+
+    expect(sut.password).toBe(newPassword)
   })
 })
